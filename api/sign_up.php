@@ -7,9 +7,9 @@ if(isset($_POST['username'])&&isset($_POST['fullname'])&&isset($_POST['password'
                         isset($_POST['email'])&&isset($_POST['gender'])){
   $username = $_POST['username'];
   $fullName = $_POST['fullname'];
-  $password = $_POST['password'];
-  $email = $_POST['email'];
-  $gender = $_POST['gender'];
+  $password = hash('sha256',$_POST["password"]);;
+  $email    = $_POST['email'];
+  $gender   = $_POST['gender'];
 
   //Kết nối database
   include ('../lib/db.php');
