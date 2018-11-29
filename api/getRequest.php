@@ -37,7 +37,7 @@ $data=pg_query($dbconn,$sql);
                      $full_name="full name";
                      while($subj=pg_fetch_array($res2))
                      {
-                      $full_name= $subj['full_name'];
+                      /*$full_name= $subj['full_name'];*/
                          
                      }
          array_push($array,  
@@ -47,7 +47,8 @@ $data=pg_query($dbconn,$sql);
                           $row['send_date'],
                           $row['note'],
                           $full_name
-                        ));
+                        )
+                    );
      }      
     // Chuyen dinh dang cua mang thanh JSON
      echo json_encode($array);
