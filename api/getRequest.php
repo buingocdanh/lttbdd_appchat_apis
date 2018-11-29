@@ -6,12 +6,12 @@ $res=null;
  * 
  */
  class RequestFriend{
-      function RequestFriend($to_userid,$from_userid,$send_date,$note){
+      function RequestFriend($to_userid,$from_userid,$send_date,$note,$from_username){
+            
             $this->to_userid=$to_userid;
             $this->from_userid=$from_userid;
             $this->send_date=$send_date;
-            $this->note=$note;
-          
+            $this->note=$note;$from_full_name;
       }
  }
 
@@ -27,15 +27,25 @@ $data=pg_query($dbconn,$sql);
    //add element to arrUser
      while ($row=pg_fetch_array($data)) 
      {
-        array_push($array, new RequestFriend($row['to_userid'],$row['from_userid'],$row['send_date'],$row['note']));
+
+          $from_userid= $row['from_userid'];
+                    
+                     $sql_get_fullname = "SELECT * FROM \"public\".\"user\" WHERE userid='$from_userid'";
+                     $res2= pg_query($sql_get_fullname);
+
+                     $full_name=null;
+                     while($subj=pg_fetch_array($res2))
+                     {
+                      $full_name= $subj['full_name'];
+                         
+                     }
+         array_push($array,  
+                         new RequestFriend($row['to_userid'],
+                          $row['from_userid'],
+                          $row['send_date'],
+                          $row['note']),
+                          $full_name);
      }      
     // Chuyen dinh dang cua mang thanh JSON
      echo json_encode($array);
-
-
-
-
-
-
-
 ?>
