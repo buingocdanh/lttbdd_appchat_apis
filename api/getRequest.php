@@ -46,7 +46,7 @@ $data=pg_query($dbconn,$sql);
                           $row['from_userid'],
                           $row['send_date'],
                           $row['note'],
-                          "aaaaa"));
+                          $full_name));
      }      
     // Chuyen dinh dang cua mang thanh JSON
      echo json_encode($array);
