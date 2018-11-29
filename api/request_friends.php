@@ -20,6 +20,6 @@ if(isset($_POST['to_userid'])&&isset($_POST['from_userid'])){
   $res = new Result(Constant::SUCCESS,'Send request successfully');
       
   $dbconnection->close();
-
+}
   echo (json_encode($res));
 ?>
