@@ -41,16 +41,15 @@ $data=pg_query($dbconn,$sql);
                          
                      }*/
          array_push($array,  
-                         new RequestFriend($row['to_userid'],
+                         new RequestFriend(
+                          $row['to_userid'],
                           $row['from_userid'],
                           $row['send_date'],
                           $row['note']),
-                          "name");
+                          "aaaaa");
      }      
     // Chuyen dinh dang cua mang thanh JSON
      echo json_encode($array);
-
-
 
 
 ?>
