@@ -29,7 +29,7 @@ if(isset($_POST["userid"])){
           //add element to arrUser
             while ($row=mysqli_fetch_assoc($result)) 
                  {
-                    
+                    echo $row["to_userid"];
                      array_push($array, 
                                 new RequestFriend(
                                             $row['to_userid'],
