@@ -5,7 +5,7 @@ include "../lib/data.php";
 $res = null;
 if(isset($_POST['to_userid'])&&isset($_POST['from_userid'])){
   $to_userid = $_POST['to_userid'];
-  $from_userid = $_POST['to_userid'];
+  $from_userid = $_POST['from_userid'];
 
   //Kết nối database
   include ('../lib/db.php');
@@ -21,5 +21,6 @@ if(isset($_POST['to_userid'])&&isset($_POST['from_userid'])){
       
   $dbconnection->close();
 }
+
   echo (json_encode($res));
 ?>
