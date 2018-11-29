@@ -26,9 +26,9 @@ if(isset($_POST["userid"])){
    
     if(postgresql_num_rows($result)>0){
             $array=array();
-         echo "s";
+           echo "sssss";
           //add element to arrUser
-            while ($row=mysqli_fetch_assoc($result)) 
+          /*  while ($row=mysqli_fetch_assoc($result)) 
                  {
                     
                      array_push($array, 
@@ -39,7 +39,7 @@ if(isset($_POST["userid"])){
                                             $row['note'])
                               );
                  }
-                      
+                      */
     // Chuyen dinh dang cua mang thanh JSON
            echo json_encode($array);
 
@@ -55,6 +55,7 @@ if(isset($_POST["userid"])){
 }
 
 else{
+       echo "loi post";
   //error -1
         $res = new Result(Constant::GENERAL_ERROR,'Send request not excute');
         echo (json_encode($res));
