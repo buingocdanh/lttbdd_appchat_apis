@@ -12,13 +12,14 @@ if(isset($_POST['to_userid'])&&isset($_POST['from_userid'])){
 
 
   $dbconnection = new postgresql("");
+  echo "ABC";
   $sql_send_request = "INSERT INTO public.request_friends(to_userid,from_userid,send_date,note)
-        values ('$to_userid','$from_userid',CURRENT_DATE,'hello')";
+        VALUES ('$to_userid','$from_userid',CURRENT_DATE,'hello')";
   $dbconnection->execute($sql_send_request);
 
   $res = new Result(Constant::SUCCESS,'Send request successfully');
       
   $dbconnection->close();
 
-echo (json_encode($res));
+  echo (json_encode($res));
 ?>
