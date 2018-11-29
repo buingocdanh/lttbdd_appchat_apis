@@ -34,7 +34,7 @@ $data=pg_query($dbconn,$sql);
                      $sql_get_fullname = "SELECT * FROM \"public\".\"user\" WHERE user_id='$from_userid'";
                      $res2= pg_query($sql_get_fullname);
 
-                     $full_name=null;
+                     $full_name="full name";
                      while($subj=pg_fetch_array($res2))
                      {
                       $full_name= $subj['full_name'];
@@ -46,7 +46,8 @@ $data=pg_query($dbconn,$sql);
                           $row['from_userid'],
                           $row['send_date'],
                           $row['note'],
-                          $full_name));
+                          $full_name
+                        ));
      }      
     // Chuyen dinh dang cua mang thanh JSON
      echo json_encode($array);
