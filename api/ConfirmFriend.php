@@ -4,7 +4,7 @@ include "../lib/data.php";
 //Lấy data từ client
 $res = null;
 if(isset($_POST['user_id'])&&isset($_POST['friend_id'])){
-  $user_id = $_POST['userid'];
+  $user_id = $_POST['user_id'];
   $friend_id = $_POST['friend_id'];
 
   //Kết nối database
@@ -14,7 +14,7 @@ if(isset($_POST['user_id'])&&isset($_POST['friend_id'])){
   $dbconnection = new postgresql("");
 
   $sql_send_request = "INSERT INTO public.friend(user_id,friend_id,note)
-        VALUES ('$user_id','$friedn_id','note')";
+        VALUES ('$user_id','$friend_id')";
   $dbconnection->execute($sql_send_request);
 
   $res = new Result(0,'Send request successfully');
