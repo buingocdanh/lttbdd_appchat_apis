@@ -31,13 +31,13 @@ $data=pg_query($dbconn,$sql);
 
           $from_userid= $row['from_userid'];
                  
-                  /*   $sql_get_fullname = "SELECT * FROM \"public\".\"user\" WHERE user_id='$from_userid'";
+                   /*  $sql_get_fullname = "SELECT * FROM \"public\".\"user\" WHERE userid='$from_userid'";
                      $res2= pg_query($sql_get_fullname);
 
-                     $full_name="full name";
+                     $full_name=null;
                      while($subj=pg_fetch_array($res2))
                      {
-                      /*$full_name= $subj['full_name'];
+                      $full_name= $subj['full_name'];
                          
                      }*/
          array_push($array,  
@@ -46,12 +46,8 @@ $data=pg_query($dbconn,$sql);
                           $row['from_userid'],
                           $row['send_date'],
                           $row['note'],
-                         "fullname"
-                        )
-                    );
+                          "aaaaa"));
      }      
     // Chuyen dinh dang cua mang thanh JSON
      echo json_encode($array);
-
-
 ?>
