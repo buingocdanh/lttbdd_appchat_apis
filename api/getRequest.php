@@ -23,7 +23,8 @@ if(isset($_POST["userid"])){
      //$dbconnection=getDatabase();
      $dbconnection = new postgresql("");
      $result = $dbconnection->select($sql);
-   
+     $so=postgresql_num_rows($result);
+   echo $so;
     if(postgresql_num_rows($result)>0){
             $array=array();
            echo "sssss";
