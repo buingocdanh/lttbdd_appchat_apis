@@ -38,10 +38,7 @@ $data=pg_query($dbconn,$sql);
      echo json_encode($array);
 
 }
-else{
-    $res = new Result(Constant::GENERAL_ERROR, 'REQUEST NOT EXCUTE.');
-    echo (json_encode($res));
-}
+
 
 
 ?>
