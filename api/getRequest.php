@@ -25,7 +25,7 @@ if(isset($_POST["userid"])){
      $result = $dbconnection->select($sql);
     if($result!==null){
             $array=array();
-         
+         echo "kkkkkk";
           //add element to arrUser
             while ($row=mysqli_fetch_assoc($result)) 
                  {
