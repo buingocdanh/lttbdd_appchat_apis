@@ -46,7 +46,7 @@ $data=pg_query($dbconn,$sql);
                           $row['from_userid'],
                           $row['send_date'],
                           $row['note'],
-                          $full_name
+                          "fullname"
                         )
                     );
      }      
