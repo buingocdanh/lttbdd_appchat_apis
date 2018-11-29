@@ -44,6 +44,8 @@ if(isset($_POST["userid"])){
 
         }
       else{
+         echo "kjkkk";
+
         //error -1
           $res = new Result(Constant::GENERAL_ERROR,'Send request not excute');
           echo (json_encode($res));
