@@ -17,19 +17,20 @@ $res=null;
 if(isset($_POST["userid"])){
 
     $userid = $_POST["userid"];
-    $sql = "SELECT * FROM \'public\'.\'request_friends\'";
+    $sql = "SELECT * FROM public.request_friends WHERE to_userid='74'";
      // ket noi database
      include "../lib/db.php";
      //$dbconnection=getDatabase();
      $dbconnection = new postgresql("");
      $result = $dbconnection->select($sql);
+   
     if(postgresql_num_rows($result)>0){
             $array=array();
-         echo "kkkkkk";
+         echo "s";
           //add element to arrUser
             while ($row=mysqli_fetch_assoc($result)) 
                  {
-                    echo $row["to_userid"];
+                    
                      array_push($array, 
                                 new RequestFriend(
                                             $row['to_userid'],
@@ -43,11 +44,21 @@ if(isset($_POST["userid"])){
            echo json_encode($array);
 
         }
-      
+      else{
+        echo "kjkkk";
+        //error -1
+          $res = new Result(Constant::GENERAL_ERROR,'Send request not excute');
+          echo (json_encode($res));
+      }  
     $dbconnection->close();
+
 }
 
-
+else{
+  //error -1
+        $res = new Result(Constant::GENERAL_ERROR,'Send request not excute');
+        echo (json_encode($res));
+}
 
 
 ?>
