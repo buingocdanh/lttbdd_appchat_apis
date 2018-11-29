@@ -12,7 +12,7 @@ if(isset($_POST['to_userid'])&&isset($_POST['from_userid'])){
 
 
   $dbconnection = new postgresql("");
-  $sql_send_request = "INSERT INTO public.user(to_userid,from_userid,send_date,note)
+  $sql_send_request = "INSERT INTO \"public\".\"request_friends\"
         values ('$to_userid','$from_userid',CURRENT_DATE,'hello')";
   $dbconnection->execute($sql_send_request);
 
