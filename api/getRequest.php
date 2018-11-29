@@ -17,7 +17,7 @@ $res=null;
 if(isset($_POST["userid"])){
 
     $userid = $_POST["userid"];
-    $sql = "SELECT * FROM \"public\".\"request_friends\" WHERE to_userid='74'";
+    $sql = "SELECT * FROM \'public\'.\'request_friends\'";
      // ket noi database
      include "../lib/db.php";
      //$dbconnection=getDatabase();
