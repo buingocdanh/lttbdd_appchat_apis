@@ -31,7 +31,7 @@ $data=pg_query($dbconn,$sql);
 
           $from_userid= $row['from_userid'];
                  
-                     $sql_get_fullname = "SELECT * FROM \"public\".\"user\" WHERE userid='$from_userid'";
+                     $sql_get_fullname = "SELECT * FROM \"public\".\"user\" WHERE user_id='$from_userid'";
                      $res2= pg_query($sql_get_fullname);
 
                      $full_name=null;
