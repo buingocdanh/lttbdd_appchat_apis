@@ -28,13 +28,10 @@ if (isset($_POST["username"])
    $dbconnection = new postgresql("");
   
   
-  if($result= $dbconnection->execute($sql))
-  {
-	   $res = new Result(Constant::SUCCESS,'Update user information successfully');
-  }
-  else{
-	    $res=new Result(-1,"Request not excute");
-	  }
+  $result= $dbconnection->execute($sql);
+   $res = new Result(Constant::SUCCESS,'Update user information successfully');
+  
+ 
  
 } else {
     $res = new Result(Constant::INVALID_PARAMETERS, 'Invalid parameters.');
