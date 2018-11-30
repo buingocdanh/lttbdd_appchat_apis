@@ -27,8 +27,8 @@ if (isset($_POST["username"])
     //$dbconnection=getDatabase();
    $dbconnection = new postgresql("");
   
-  $result= $dbconnection->execute($sql);
-  if($result!==null)
+  
+  if($result= $dbconnection->execute($sql))
   {
 	   $res = new Result(Constant::SUCCESS,'Update user information successfully');
   }
