@@ -19,7 +19,7 @@ if (isset($_POST["username"])
       full_name='$fullname',
 	  email = '$email', 
 	  pass_word = '$password',
-	  gender = 'gender' 
+	  gender = '$gender' 
 	  WHERE user_name = '$username'";
   
  // ket noi database
